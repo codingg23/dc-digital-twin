@@ -1,0 +1,6 @@
+numpy>=1.26
+networkx>=3.2
+plotly>=5.19
+pyyaml>=6.0
+scipy>=1.11
+gradio>=4.20
