@@ -97,7 +97,7 @@ def add_load_scenario(model: DCModel, additional_kw: float, row: Optional[str] =
     elif risk == "high":
         rec = "Consider adding supplemental cooling or moving some load to another zone before proceeding."
     else:
-        rec = "Do not proceed. Insufficient cooling headroom — risk of thermal exceedance."
+        rec = "Do not proceed. Insufficient cooling headroom  -  risk of thermal exceedance."
 
     return ScenarioResult(
         scenario_name=f"+{additional_kw:.0f}kW load" + (f" to {row}" if row else " distributed"),

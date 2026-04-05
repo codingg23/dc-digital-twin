@@ -7,7 +7,7 @@ A 'DCModel' represents a floor or a zone of a data centre.
 You give it a layout config + load profile, it tells you
 what the thermal and power conditions will be.
 
-Currently stateless — each call to run() computes a steady-state result.
+Currently stateless  -  each call to run() computes a steady-state result.
 Time-series simulation (step through load changes over time) is on the TODO list.
 """
 
@@ -154,7 +154,7 @@ class DCModel:
         # check UPS headroom
         ups_utilisation = total_it_load / max(self.layout.total_ups_capacity_kw, 1)
         if ups_utilisation > 0.8:
-            warnings.append(f"UPS at {ups_utilisation*100:.0f}% capacity — approaching N+1 limit")
+            warnings.append(f"UPS at {ups_utilisation*100:.0f}% capacity  -  approaching N+1 limit")
 
         for zone in self.layout.zones:
             zone_rack_ids = [
@@ -185,11 +185,11 @@ class DCModel:
             cap_frac = zone_thermal["crac_capacity_fraction"]
 
             if inlet > 27:
-                warnings.append(f"Zone {zone.zone_id}: inlet temp {inlet:.1f}°C — approaching ASHRAE A2 limit (35°C)")
+                warnings.append(f"Zone {zone.zone_id}: inlet temp {inlet:.1f}°C  -  approaching ASHRAE A2 limit (35°C)")
             if cap_frac > 0.90:
-                warnings.append(f"Zone {zone.zone_id}: CRAC at {cap_frac*100:.0f}% capacity — very limited headroom")
+                warnings.append(f"Zone {zone.zone_id}: CRAC at {cap_frac*100:.0f}% capacity  -  very limited headroom")
             elif cap_frac > 0.80:
-                warnings.append(f"Zone {zone.zone_id}: CRAC at {cap_frac*100:.0f}% capacity — monitor closely")
+                warnings.append(f"Zone {zone.zone_id}: CRAC at {cap_frac*100:.0f}% capacity  -  monitor closely")
 
         pue = self._pue_from_crac_loads(total_it_load, total_crac_load)
         facility_load = total_it_load + total_crac_load + total_it_load * 0.025

@@ -21,7 +21,7 @@ TODO: make recirculation configurable per zone.
 
 References I found useful:
   - ASHRAE TC 9.9 data centre guidelines
-  - "Fundamentals of Data Centre Cooling" — Vali et al.
+  - "Fundamentals of Data Centre Cooling"  -  Vali et al.
   - Various white papers from Schneider/Vertiv (take with a grain of salt)
 """
 

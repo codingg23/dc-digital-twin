@@ -8,7 +8,7 @@ COP (Coefficient of Performance) of a chiller varies with:
   - Outdoor wet-bulb temperature (drives condenser performance)
   - Chilled water supply temperature setpoint
 
-This is important for PUE modelling — a chiller at 40% load
+This is important for PUE modelling  -  a chiller at 40% load
 might have better or worse COP than at 80% depending on the
 equipment curve. Scroll down to ChillerPlant for details.
 """
@@ -56,7 +56,7 @@ class CRACUnit:
 
         load_fraction = float(np.clip(load_fraction, 0.1, 1.0))
 
-        # part-load curve — rough quadratic approximation
+        # part-load curve  -  rough quadratic approximation
         plr_factor = -0.8 * (load_fraction - 0.75) ** 2 + 1.0
         plr_factor = float(np.clip(plr_factor, 0.6, 1.0))
 
@@ -96,7 +96,7 @@ class ChillerPlant:
     design conditions might hit COP 5.5+, but at high ambient temps
     or part load it can drop significantly.
 
-    This is simplified — real chiller control has sequencing logic,
+    This is simplified  -  real chiller control has sequencing logic,
     lead-lag rotation, demand limiting, etc. Ignoring all that here.
     """
 
