@@ -2,14 +2,14 @@
 
 A lightweight simulation sandbox for data centre modules. Model the impact of infrastructure changes before touching anything real.
 
-This is a physics-lite digital twin - not CFD, not a full-blown simulation. The goal is to be useful, not academically accurate. Operators need to answer questions like "if I add 8 more GPU racks to Row 5, what happens to the cooling load?" before they've committed to anything.
+This is a physics lite digital twin - not CFD, not a full blown simulation. The goal is to be useful, not academically accurate. Operators need to answer questions like "if I add 8 more GPU racks to Row 5, what happens to the cooling load?" before they've committed to anything.
 
 ## Overview
 
 The twin models three interconnected systems:
 
 **Power**
-- Rack-level load profiles (from the forecaster or manual input)
+- Rack level load profiles (from the forecaster or manual input)
 - PDU capacity constraints
 - UPS N+1 topology
 
@@ -83,7 +83,7 @@ for 24h after change.
 
 ## Results / Learnings
 
-Interesting finding: PUE sensitivity to inlet setpoint is non-linear. Going from 21 to 23 degrees gives a bigger efficiency gain than 23 to 25, because the chiller COP curve drops off at higher loads. This isn't obvious without modelling it.
+Interesting finding: PUE sensitivity to inlet setpoint is non linear. Going from 21 to 23 degrees gives a bigger efficiency gain than 23 to 25, because the chiller COP curve drops off at higher loads. This isn't obvious without modelling it.
 
 The model is deliberately conservative - it tends to flag risks a bit earlier than reality. I'd rather operators check something that turns out to be fine than miss something that cascades into a thermal incident.
 
@@ -106,6 +106,6 @@ dc-digital-twin/
 ## TODO
 
 - [ ] Validate model against real facility data (have a lead, waiting on NDA)
-- [ ] Liquid cooling support (rear-door HX, immersion)
-- [ ] Multi-floor propagation (shared chiller plant)
+- [ ] Liquid cooling support (rear door HX, immersion)
+- [ ] Multi floor propagation (shared chiller plant)
 - [ ] Export scenario results for operator review
